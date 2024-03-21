@@ -33,7 +33,7 @@ wait_for() {
         DIR_FOUND=false
         _timedout=false
         if test -n "${HOST}"; then
-            timeout 1 nc -z "${HOST}" "${PORT}" > /dev/null 2>&1
+            timeout 1 nc -zv "${HOST}" "${PORT}"
             result=${?}
             if test ${result} -eq 0; then
                 if test ${#} -gt 0; then
